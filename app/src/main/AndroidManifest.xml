@@ -10,6 +10,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Drug.Warn.WarnBenzeneActivity" />
         <activity android:name=".Drug.Warn.WarnTolueneActivity" />
         <activity android:name=".Drug.Warn.WarnEthanolActivity" />
@@ -22,7 +31,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
@@ -36,7 +45,7 @@
         <activity android:name=".OxidantActivity" />
         <activity android:name=".ToxicCompoundActivity" />
         <activity android:name=".AcidAlkalineCompoundsActivity" />
-        <activity android:name=".Experiment.ExperimentActivity"></activity>
+        <activity android:name=".Experiment.ExperimentActivity" />
     </application>
 
 </manifest>

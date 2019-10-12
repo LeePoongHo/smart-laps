@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- For Splash Screen -->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+    </style>
     <style name="TitleTextView"  parent="@android:style/Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
