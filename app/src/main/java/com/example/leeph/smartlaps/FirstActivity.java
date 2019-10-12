@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.leeph.smartlaps.Drug.DrugActivity;
+import com.example.leeph.smartlaps.Experiment.ExperimentActivity;
 
 public class FirstActivity extends AppCompatActivity {
 
-    private Button btnSafety, btnDrug;
+    private Button btnSafety, btnDrug, btnExperience, btnTool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,8 @@ public class FirstActivity extends AppCompatActivity {
 
         btnSafety = (Button) findViewById(R.id.menuBtn1);
         btnDrug = (Button) findViewById(R.id.menuBtn2);
+        btnTool = (Button) findViewById(R.id.menuBtn3);
+        btnExperience = (Button) findViewById(R.id.menuBtn4);
 
         btnSafety.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +35,22 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(FirstActivity.this, DrugActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnTool.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstActivity.this, DrugActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnExperience.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstActivity.this, ExperimentActivity.class);
                 startActivity(intent);
             }
         });

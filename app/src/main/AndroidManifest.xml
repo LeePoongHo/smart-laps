@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Drug.Warn.WarnBenzeneActivity"></activity>
+        <activity android:name=".Drug.Warn.WarnBenzeneActivity" />
         <activity android:name=".Drug.Warn.WarnTolueneActivity" />
         <activity android:name=".Drug.Warn.WarnEthanolActivity" />
         <activity android:name=".Drug.Warn.WarnWaterActivity" />
@@ -35,7 +35,8 @@
         <activity android:name=".FlammableLiquidsActivity" />
         <activity android:name=".OxidantActivity" />
         <activity android:name=".ToxicCompoundActivity" />
-        <activity android:name=".AcidAlkalineCompoundsActivity"></activity>
+        <activity android:name=".AcidAlkalineCompoundsActivity" />
+        <activity android:name=".Experiment.ExperimentActivity"></activity>
     </application>
 
 </manifest>
