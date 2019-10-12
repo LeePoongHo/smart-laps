@@ -21,30 +21,30 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnPVA"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:text="@string/strPVA" />
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnWater"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:text="@string/strWater" />
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnEthanol"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:text="@string/strEthanol" />
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnToluene"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:text="@string/strToluene" />
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnBenzene"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"

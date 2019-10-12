@@ -11,4 +11,7 @@
     <string name="ExperimentMethod">실험방법</string>
     <string name="basicRule">기본수칙</string>
     <string name="chemicalSubstance">화학물질</string>
+    <string name="strWarn">경고표지</string>
+    <string name="strTolueneDetail">1. 톨루엔 (108-88-3)\n2. 유의사항\n눈에 들어갔을 때 – 접촉 즉시 20분 이상 흐르는 물에 씻어낸다\n피부에 접촉 시 – 비누와 물로 피부를 씻는다\n흡입, 먹었을 시 – 토하게 하지 않는다\n3. 위치 – A-2층
+\n4. 수량 –  3개\n5. 유기용매</string>
 </resources>

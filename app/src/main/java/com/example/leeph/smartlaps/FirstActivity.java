@@ -8,13 +8,15 @@ import android.widget.Button;
 
 public class FirstActivity extends AppCompatActivity {
 
+    private Button btnSafety, btnDrug;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        Button btnSafety = (Button) findViewById(R.id.menuBtn1);
-        Button btnDrug = (Button) findViewById(R.id.menuBtn2);
+        btnSafety = (Button) findViewById(R.id.menuBtn1);
+        btnDrug = (Button) findViewById(R.id.menuBtn2);
 
         btnSafety.setOnClickListener(new View.OnClickListener() {
             @Override
