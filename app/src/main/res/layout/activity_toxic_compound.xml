@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.leeph.smartlaps.SafetyRuleActivity">
+    tools:context="com.example.leeph.smartlaps.ToxicCompoundActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,42 +35,15 @@
                     android:textColor="@color/colorTitle"
                     android:textStyle="bold"
                     android:textSize="15dp"
-                    android:text="@string/laboratorySafetyInstructions"/>
+                    android:text="@string/ToxicTitle"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorContent"
                     android:textSize="10dp"
-                    android:text="@string/laboratorySafetyInstructionDetail"/>
+                    android:text="@string/ToxicContents"/>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:elevation="10dp"
-                android:padding="10dp"
-                android:background="#ffffff"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorTitle"
-                    android:textStyle="bold"
-                    android:textSize="15dp"
-                    android:text="@string/laboratorySafetyInstruction2"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorContent"
-                    android:textSize="10dp"
-                    android:text="@string/laboratorySafetyInstructionDetail2"/>
             </LinearLayout>
 
         </LinearLayout>

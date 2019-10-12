@@ -32,6 +32,10 @@
         <activity android:name=".ChemistryActivity" />
         <activity android:name=".ChemistryDetailActivity" />
         <activity android:name=".SafetyRuleActivity" />
+        <activity android:name=".FlammableLiquidsActivity" />
+        <activity android:name=".OxidantActivity" />
+        <activity android:name=".ToxicCompoundActivity" />
+        <activity android:name=".AcidAlkalineCompoundsActivity"></activity>
     </application>
 
 </manifest>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_chemistry"
+    android:id="@+id/activity_safety_rule"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,86 +10,89 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.leeph.smartlaps.ChemistryActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="화학 공통"/>
-        
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="○ 위해화학물질이 눈에 들어갔을 경우에 신속히 물로 세척한다. "/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="○ 실험 중 배기후드의 문은 최소(1/3이하)로 열려진 상태를 유지하도록 한다. "/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="○ 물질안전보건자료(MSDS) 내용을 항시 숙지한다. "/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="○ 시약은 종류별로 시약장에 보관하고, 시약용기는 사용 후 항상 원래의 보관 장소에 놓아 보관한다."/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="○ 발열반응 화학 실험은 특히 주의를 기울여 실험에 임한다. "/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="○ 연구실과 저장소 사이에 시약을 이동할 경우 안전한 운반 장비를 사용한다. "/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="○ 유기/무기물질은 시약장에 분류 보관하고 증기를 흡기할 수 있는 닥트시설이 연결되어야 한다."/>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <Button
+            <LinearLayout
+                android:elevation="10dp"
+                android:padding="10dp"
+                android:background="#ffffff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/chemistryDetailBtn1"
-                android:text="가연성 액체"/>
+                android:layout_margin="10dp"
+                android:orientation="vertical">
 
-            <Button
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/colorTitle"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:text="@string/chemicalCommon"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorContent"
+                    android:textSize="10dp"
+                    android:text="위해화학물질이 눈에 들어갔을 경우에 신속히 물로 세척한다.\n\n실험 중 배기후드의 문은 최소(1/3이하)로 열려진 상태를 유지하도록 한다.\n\n물질안전보건자료(MSDS) 내용을 항시 숙지한다.\n\n모든 시약의 용기에는 표식을 전면부에 부착한다.\n\n시약은 종류별로 시약장에 보관하고, 시약용기는 사용 후 항상 원래의 보관 장소에 놓아 보관한다.\n\n발열반응 화학 실험은 특히 주의를 기울여 실험에 임한다.\n\n연구실과 저장소 사이에 시약을 이동할 경우 안전한 운반 장비를 사용한다.\n\n유기/무기물질은 시약장에 분류 보관하고 증기를 흡기할 수 있는 닥트시설이 연결되어야 한다."/>
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/chemistryDetailBtn2"
-                android:text="산화제"/>
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/chemistryDetailBtn3"
-                android:text="유독성"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:id="@+id/FlammableLiquidsBtn"
+                    android:text="@string/FlammableLiquids"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/chemistryDetailBtn4"
-                android:text="산알칼리"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:id="@+id/oxidantBtn"
+                    android:text="@string/oxidantTitle"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:id="@+id/toxicBtn"
+                    android:text="@string/Toxic"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:id="@+id/acidBtn"
+                    android:text="@string/acid"/>
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

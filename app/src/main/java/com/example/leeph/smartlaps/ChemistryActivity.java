@@ -13,12 +13,39 @@ public class ChemistryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chemistry);
 
-        Button chemistryDetailBtn1 = (Button) findViewById(R.id.chemistryDetailBtn1);
+        Button FlammableLiquidsBtn = (Button) findViewById(R.id.FlammableLiquidsBtn);
+        Button OxidantBtn = (Button) findViewById(R.id.oxidantBtn);
+        Button AcidBtn = (Button) findViewById(R.id.acidBtn);
+        Button ToxicBtn = (Button) findViewById(R.id.toxicBtn);
 
-        chemistryDetailBtn1.setOnClickListener(new View.OnClickListener() {
+        FlammableLiquidsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChemistryActivity.this, ChemistryDetailActivity.class);
+                Intent intent = new Intent(ChemistryActivity.this, FlammableLiquidsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        OxidantBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChemistryActivity.this, OxidantActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        AcidBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChemistryActivity.this, AcidAlkalineCompoundsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ToxicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChemistryActivity.this, ToxicCompoundActivity.class);
                 startActivity(intent);
             }
         });

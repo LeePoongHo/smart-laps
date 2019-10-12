@@ -12,10 +12,23 @@
     <string name="basicRule">기본수칙</string>
     <string name="chemicalSubstance">화학물질</string>
     <string name="strWarn">경고표지</string>
-    <string name="strTolueneDetail">1. 톨루엔 (108-88-3)\n2. 유의사항\n눈에 들어갔을 때 – 접촉 즉시 20분 이상 흐르는 물에 씻어낸다\n피부에 접촉 시 – 비누와 물로 피부를 씻는다\n흡입, 먹었을 시 – 토하게 하지 않는다\n3. 위치 – A-2층
-\n4. 수량 –  3개\n5. 유기용매</string>
+    <string name="strTolueneDetail">1. 톨루엔 (108-88-3)\n2. 유의사항\n눈에 들어갔을 때 – 접촉 즉시 20분 이상 흐르는 물에 씻어낸다\n피부에 접촉 시 – 비누와 물로 피부를 씻는다\n흡입, 먹었을 시 – 토하게 하지 않는다\n3. 위치 – A-2층\n4. 수량 –  3개\n5. 유기용매</string>
     <string name="strTolueneWarnFire">인화성 가스\n인화성 에어로졸	\n인화성 액체,고체\n자기반응성 물질\n자연발화성 액체,고체\n자기발열성 물질\n쿨 반응성 물질\n유기 과산화물\n</string>
     <string name="strTolueneWarnBreath">호흡기과민성 물질\n발암성 물질\n생식세포 변이원성 물질\n생식 독성 물질\n특정 표적장기 독성 물질(1회 노출, 반복노출)\n흡인 유해성 물질</string>
-    <string name="strTolueneWarnCaution">급성독성 물질(경구, 경피, 흡입)\n피부 부식성 또는 자극성 물질\n피부 과민성 물질\n특정 표적장기 독성 물질(1회 노출)\n심한 눈 손상 또는 자극성 물질
-</string>
+    <string name="strTolueneWarnCaution">급성독성 물질(경구, 경피, 흡입)\n피부 부식성 또는 자극성 물질\n피부 과민성 물질\n특정 표적장기 독성 물질(1회 노출)\n심한 눈 손상 또는 자극성 물질</string>
+    <string name="laboratorySafetyInstructions">실험실 안전수칙</string>
+    <string name="laboratorySafetyInstructionDetail">모든 실험은 실험복 착용을 원칙으로 한다.\n\n위험발생 요소가 있는 실험을 실시할 경우 적정한 보호구 착용을 원칙으로 한다.\n\n연구실 출입문(또는 눈에 잘 띄는 곳)에는 비상시 비상연락망과 연구책임자, 출입가능 연구원 등의 기록을 반드시 표시한다.\n\n실험책임자는 실험 전에 실험 중 발생할 수 있는 위험요소에 대하여 사전안전교육을 실시하는 것을 원칙으로 한다.\n\n실험구역에서 음식섭취, 식품보존, 흡연, 화장 등의 행위를 하지 않도록 한다.\n\n실험과 무관한 물품의 반입을 하지 않도록 한다.\n\n지정된 장소에서만 실험을 수행 한다.\n\n연구실 퇴실 전후에 연구실의 이상 유무를 주의 깊게 확인한다.</string>
+    <string name="laboratorySafetyInstructionDetail2">위험물질을 취급하는 해당 연구실은 출입구 외에 안전한 장소로 대피할 수 있는 1개 이상의 비상구를 설치하여야 한다.\n\n비상구에 문을 설치하는 경우 항상 사용 가능한 상태로 유지되어야 한다.\n\n비상구, 비상통로, 비상용 기구 등에 대하여는 \'비상용\'이라는 뜻을 표시하고, 누구나 쉽게 이용할 수 있도록 유지하여야 한다.\n\n연구실 통로는 통행에 방해하는 장애물이 없도록 유지되어야 한다.\n\n보관중인 소화기 또는 소화설비가 쉽게 이동되거나 손잡이가 쉽게 작동되어 소화가스가 누출되지 않도록 한다.\n\n소화를 위하여 작동하는 경우 이외에 소화기 또는 소화설비를 임의로 작동시키는 것을 금한다.</string>
+    <string name="laboratorySafetyInstruction2">안전수칙 (비상통로, 출입구, 실내소화기)</string>
+    <string name="chemicalCommon">화학 공통</string>
+    <string name="FlammableliquidsDetail">각 연구실 당 가연성 액체의 보유 용량은 15리터를 초과하지 않도록 한다.\n\n유리병 당 가연성 액체의 보관 용량은 3리터를 초과하지 않도록 한다.\n\n플라스틱 병 당 가연성 액체의 보관 용량은 0.5리터를 초과하지 않도록 한다.\n\n내화성 보관함에 가연성 액체을 보관할 경우에는 연구실 당 100리터를 초과하지 않도록 한다.\n\n인화성 물질의 취급 장소에는 소화기를 반드시 비치하여야 한다.</string>
+    <string name="FlammableLiquids">가연성 액체</string>
+    <string name="AcidTitle">산·알칼리성 화합물</string>
+    <string name="AcidContent">산․알칼리성 시약을 취급할 경우 화상에 주의한다.\n\n산․알칼리성 화합물은 격리하여 보관하여야 한다.\n\n산․알칼리성 화합물은 연구실 바닥과 가까운 낮은 곳에 보관한다.\n\n산․알칼리성 시약의 희석용액을 제조할 경우 물로 천천히 냉각시키면서 소량의 산과 알칼리를 점진적으로 첨가하여 희석시킨다.\n\n산․알칼리성 시약을 운반할 경우에는 깨지지 않는 이송용기 사용을 원칙으로 한다.\n\n산․알칼리성 시약은 부식성이 있는 금속성 용기에 저장하고 사용하는 것을 금한다.</string>
+    <string name="ToxicTitle">유독성 화합물</string>
+    <string name="ToxicContents">유독성 화합물을 취급할 경우 반드시 후드 안에서 다루도록 한다.\n\n대용량의 유독성 화합물을 취급할 경우 안면보호구를 갖춘 양압자급식 호흡 보호구를 착용한다.\n\n유독성 화합물은 식료품, 의약품, 시료 등과의 혼합 저장을 금한다.\n\n유독성 화합물은 반드시 교육을 받은 후에 취급되어야 한다.</string>
+    <string name="oxidantTitle">산화제</string>
+    <string name="oxidantContent">산화제는 가연성 물질과는 격리하여 보관한다.\n\n산화제는 건조하고 통풍이 잘되는 장소에 밀폐하여 보관한다.\n\n산화제 취급 장소에는 물 또는 ABC 소화기를 반드시 비치한다.\n\n산화제를 폐기할 경우 묽은 용액 상태로 변환하여 폐기한다.\n\n산화제는 고압 건조한 가루 상태에서의 마찰 또는 충격을 금지한다.</string>
+    <string name="Toxic">유독성</string>
+    <string name="acid">산알칼리</string>
 </resources>
