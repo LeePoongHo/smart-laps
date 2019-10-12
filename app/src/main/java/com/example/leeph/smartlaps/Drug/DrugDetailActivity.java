@@ -1,4 +1,4 @@
-package com.example.leeph.smartlaps;
+package com.example.leeph.smartlaps.Drug;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.leeph.smartlaps.Warn.WarnPvaActivity;
+import com.example.leeph.smartlaps.Drug.Warn.WarnTolueneActivity;
+import com.example.leeph.smartlaps.R;
+import com.example.leeph.smartlaps.Drug.Warn.WarnPvaActivity;
 
 public class DrugDetailActivity extends AppCompatActivity {
     private ImageView imageTitle;
@@ -20,7 +22,6 @@ public class DrugDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug_detail);
-        setTitle(getString(R.string.strToluene));
 
         imageTitle = (ImageView) findViewById(R.id.imageTitle);
         btnWarn = (Button) findViewById(R.id.btnWarn);
@@ -34,8 +35,7 @@ public class DrugDetailActivity extends AppCompatActivity {
             btnWarn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(DrugDetailActivity.this, WarnPvaActivity.class);
-                    intent.putExtra("drug",strDrug);
+                    Intent intent = new Intent(DrugDetailActivity.this, WarnTolueneActivity.class);
                     startActivity(intent);
                 }
             });

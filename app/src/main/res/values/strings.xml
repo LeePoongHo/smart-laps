@@ -14,4 +14,8 @@
     <string name="strWarn">경고표지</string>
     <string name="strTolueneDetail">1. 톨루엔 (108-88-3)\n2. 유의사항\n눈에 들어갔을 때 – 접촉 즉시 20분 이상 흐르는 물에 씻어낸다\n피부에 접촉 시 – 비누와 물로 피부를 씻는다\n흡입, 먹었을 시 – 토하게 하지 않는다\n3. 위치 – A-2층
 \n4. 수량 –  3개\n5. 유기용매</string>
+    <string name="strTolueneWarnFire">인화성 가스\n인화성 에어로졸	\n인화성 액체,고체\n자기반응성 물질\n자연발화성 액체,고체\n자기발열성 물질\n쿨 반응성 물질\n유기 과산화물\n</string>
+    <string name="strTolueneWarnBreath">호흡기과민성 물질\n발암성 물질\n생식세포 변이원성 물질\n생식 독성 물질\n특정 표적장기 독성 물질(1회 노출, 반복노출)\n흡인 유해성 물질</string>
+    <string name="strTolueneWarnCaution">급성독성 물질(경구, 경피, 흡입)\n피부 부식성 또는 자극성 물질\n피부 과민성 물질\n특정 표적장기 독성 물질(1회 노출)\n심한 눈 손상 또는 자극성 물질
+</string>
 </resources>
