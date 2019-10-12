@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SmartLaps</string>
+    <string name="strPVA">PVA 산</string>
+    <string name="strWater">증류수 유기</string>
+    <string name="strEthanol">에탄올 유기</string>
+    <string name="strToluene">톨루엔 유기</string>
+    <string name="strBenzene">벤젠 유기</string>
 </resources>

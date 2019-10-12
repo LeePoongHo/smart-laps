@@ -13,14 +13,25 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        Button safetyBtton = (Button) findViewById(R.id.menuBtn1);
+        Button btnSafety = (Button) findViewById(R.id.menuBtn1);
+        Button btnDrug = (Button) findViewById(R.id.menuBtn2);
 
-        safetyBtton.setOnClickListener(new View.OnClickListener() {
+        btnSafety.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(FirstActivity.this, SafetyActivity.class);
                 startActivity(intent);
             }
         });
+
+        btnDrug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstActivity.this, DrugActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

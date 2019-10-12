@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_drug"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.leeph.smartlaps.DrugActivity">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:text=""/>
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnPVA"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="@string/strPVA" />
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/btnWater"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="@string/strWater" />
+
+            <Button
+                android:id="@+id/btnEthanol"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="@string/strEthanol" />
+
+            <Button
+                android:id="@+id/btnToluene"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="@string/strToluene" />
+            <Button
+                android:id="@+id/btnBenzene"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="@string/strBenzene" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.v7.widget.LinearLayoutCompat>
