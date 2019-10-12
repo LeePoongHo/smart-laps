@@ -14,6 +14,7 @@ public class SafetyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_safety);
 
         Button chemistryBtn = (Button)findViewById(R.id.chemistryBtn);
+        Button basicruleBtn = (Button) findViewById(R.id.basicruleBtn);
 
         chemistryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,5 +23,15 @@ public class SafetyActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        basicruleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SafetyActivity.this, SafetyRuleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

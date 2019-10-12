@@ -5,4 +5,10 @@
     <string name="strEthanol">에탄올 유기</string>
     <string name="strToluene">톨루엔 유기</string>
     <string name="strBenzene">벤젠 유기</string>
+    <string name="safetyRule">안전수칙</string>
+    <string name="drug">시약</string>
+    <string name="LaboratoryToolsAndInstruments">실험도구 및 기구</string>
+    <string name="ExperimentMethod">실험방법</string>
+    <string name="basicRule">기본수칙</string>
+    <string name="chemicalSubstance">화학물질</string>
 </resources>

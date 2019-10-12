@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_safety_rule"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.leeph.smartlaps.SafetyRuleActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="실험실 안전수칙"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="○ 모든 실험은 실험복 착용을 원칙으로 한다.\n\n○ 위험발생 요소가 있는 실험을 실시할 경우 적정한 보호구 착용을 원칙으로 한다.\n\n○ 연구실 출입문(또는 눈에 잘 띄는 곳)에는 비상시 비상연락망과 연구책임자, 출입가능 연구원 등의 기록을 반드시 표시한다.\n\n○ 실험책임자는 실험 전에 실험 중 발생할 수 있는 위험요소에 대하여 사전안전교육을 실시하는 것을 원칙으로 한다.\n\n○ 실험구역에서 음식섭취, 식품보존, 흡연, 화장 등의 행위를 하지 않도록 한다.\n\n○ 실험과 무관한 물품의 반입을 하지 않도록 한다.\n\n○ 지정된 장소에서만 실험을 수행 한다.\n\n○ 연구실 퇴실 전후에 연구실의 이상 유무를 주의 깊게 확인한다."/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

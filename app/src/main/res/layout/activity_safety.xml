@@ -14,21 +14,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <Button
-            android:layout_width="280dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="기본수칙"
-            />
+            android:orientation="horizontal">
 
-        <Button
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/chemistryBtn"
-            android:text="화학물질"
-            />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:id="@+id/basicruleBtn"
+                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:text="@string/basicRule"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/chemistryBtn"
+                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:text="@string/chemicalSubstance"
+                />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

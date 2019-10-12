@@ -24,7 +24,8 @@
         <activity android:name=".SafetyActivity" />
         <activity android:name=".DrugActivity" />
         <activity android:name=".ChemistryActivity" />
-        <activity android:name=".ChemistryDetailActivity"></activity>
+        <activity android:name=".ChemistryDetailActivity" />
+        <activity android:name=".SafetyRuleActivity"></activity>
     </application>
 
 </manifest>

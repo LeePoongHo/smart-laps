@@ -15,34 +15,57 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:layout_width="280dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/menuBtn1"
-            android:text="안전수칙"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:layout_width="280dp"
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/menuBtn1"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:text="@string/safetyRule"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/menuBtn2"
+                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:text="@string/drug"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/menuBtn2"
-            android:text="시약"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/menuBtn3"
-            android:text="실험도구 및 기구"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/menuBtn3"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:text="@string/LaboratoryToolsAndInstruments"/>
 
-        <Button
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/menuBtn4"
-            android:text="실험방법"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/menuBtn4"
+                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:text="@string/ExperimentMethod"/>
 
+        </LinearLayout>
 
     </LinearLayout>
 
