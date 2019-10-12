@@ -38,9 +38,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="수강신청 도우미"
+                android:text="캡스톤 디자인"
                 android:textColor="#ffffff"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
