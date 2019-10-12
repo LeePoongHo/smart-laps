@@ -46,9 +46,9 @@
         <activity android:name=".ToxicCompoundActivity" />
         <activity android:name=".AcidAlkalineCompoundsActivity" />
         <activity android:name=".Experiment.ExperimentActivity" />
-        <activity android:name=".Pop"
-            android:theme="@style/AppTheme.Pop">
-        </activity>
+        <activity
+            android:name=".Pop"
+            android:theme="@style/AppTheme.Pop"></activity>
     </application>
 
 </manifest>
