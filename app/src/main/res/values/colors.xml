@@ -7,4 +7,5 @@
     <color name="colorGray">#8C8C8C</color>
     <color name="colorTitle">#195D9A</color>
     <color name="colorContent">#2C8FFE</color>
+    <color name="colorBackground">#C6E8FF</color>
 </resources>
