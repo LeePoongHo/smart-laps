@@ -30,7 +30,7 @@ public class DrugDetailActivity extends AppCompatActivity {
         strDrug = getIntent().getStringExtra("drug");
 
         if (strDrug.equals("toluene")) {
-            imageTitle.setImageResource(R.drawable.logo);
+            imageTitle.setImageResource(R.drawable.img_toluene);
             txtDetail.setText(R.string.strTolueneDetail);
             btnWarn.setOnClickListener(new View.OnClickListener() {
                 @Override

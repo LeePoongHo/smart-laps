@@ -37,6 +37,7 @@ public class ToolActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ToolActivity.this,ToolDetailActivity.class);
+                intent.putExtra("tool","btnRefluxCondenser");
                 startActivity(intent);
             }
         });

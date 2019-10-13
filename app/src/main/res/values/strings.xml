@@ -31,4 +31,22 @@
     <string name="oxidantContent">산화제는 가연성 물질과는 격리하여 보관한다.\n\n산화제는 건조하고 통풍이 잘되는 장소에 밀폐하여 보관한다.\n\n산화제 취급 장소에는 물 또는 ABC 소화기를 반드시 비치한다.\n\n산화제를 폐기할 경우 묽은 용액 상태로 변환하여 폐기한다.\n\n산화제는 고압 건조한 가루 상태에서의 마찰 또는 충격을 금지한다.</string>
     <string name="Toxic">유독성</string>
     <string name="acid">산알칼리</string>
+    <string name="strRefluxCondenserCaution">주의사항 : 환류냉각기의 연결부분을 증기가 새어나가지 않도록 테프론테이프로 밀봉을 해준다.</string>
+    <string name="strRefluxCondenserUse">사용법 : 증기가 응축되어 추출되는 부분의 연결관에 고무호스를 연결하고그부분부터 물이 유입되도록 고무호스를 연결한다.</string>
+    <string name="strRefluxCondenser">환류 냉각기</string>
+    <string name="strDeanStarkTrap">딘스탁트랩</string>
+    <string name="strPipette">피펫</string>
+    <string name="strStand">스탠드</string>
+    <string name="strClamp">클램프</string>
+    <string name="strOstwald">Ostwald 점도계</string>
+    <string name="strBuchnerFunnel">뷰흐너 깔때기</string>
+    <string name="strSuctionFlask">감압플라스크</string>
+    <string name="strMeasuringCylinder">메스실린더</string>
+    <string name="strMeasuringFlask">메스플라스크</string>
+    <string name="strErlenmeyerFlask">삼각플라스크</string>
+    <string name="strBeaker">비이커</string>
+    <string name="strHotPlate">핫플레이트</string>
+    <string name="strAgitator">교반기</string>
+    <string name="strElectronicScale">전자저울</string>
+    <string name="strHeatingMantle">히팅멘틀</string>
 </resources>

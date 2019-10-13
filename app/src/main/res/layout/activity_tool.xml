@@ -28,25 +28,25 @@
                     android:id="@+id/btnHeatingMantle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="히팅멘틀" />
+                    android:text="@string/strHeatingMantle" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnElectronicScale"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="전자저울" />
+                    android:text="@string/strElectronicScale" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnAgitator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="교반기" />
+                    android:text="@string/strAgitator" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnHotPlate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="핫플레이트" />
+                    android:text="@string/strHotPlate" />
             </LinearLayout>
 
             <LinearLayout
@@ -62,73 +62,73 @@
                     android:id="@+id/btnBeaker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="비이커" />
+                    android:text="@string/strBeaker" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnErlenmeyerFlask"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="삼각플라스크" />
+                    android:text="@string/strErlenmeyerFlask" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnMeasuringFlask"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="메스플라스크" />
+                    android:text="@string/strMeasuringFlask" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnMeasuringCylinder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="메스실린더" />
+                    android:text="@string/strMeasuringCylinder" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnSuctionFlask"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="감압플라스크" />
+                    android:text="@string/strSuctionFlask" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnBuchnerFunnel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="뷰흐너 깔때기" />
+                    android:text="@string/strBuchnerFunnel" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnOstwald"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ostwald 점도계" />
+                    android:text="@string/strOstwald" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnClamp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="클램프" />
+                    android:text="@string/strClamp" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnStand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="스탠드" />
+                    android:text="@string/strStand" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnDeanStarkTrap"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="딘스탁트랩" />
+                    android:text="@string/strDeanStarkTrap" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnRefluxCondenser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="환류냉각기" />
+                    android:text="@string/strRefluxCondenser" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnPipette"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="피펫" />
+                    android:text="@string/strPipette" />
             </LinearLayout>
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v4.widget.NestedScrollView>
