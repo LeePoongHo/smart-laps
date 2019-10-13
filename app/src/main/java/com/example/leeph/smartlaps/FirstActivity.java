@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.example.leeph.smartlaps.Drug.DrugActivity;
 import com.example.leeph.smartlaps.Experiment.ExperimentActivity;
+import com.example.leeph.smartlaps.Tool.ToolActivity;
 
 public class FirstActivity extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class FirstActivity extends AppCompatActivity {
         btnTool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FirstActivity.this, DrugActivity.class);
+                Intent intent = new Intent(FirstActivity.this, ToolActivity.class);
                 startActivity(intent);
             }
         });

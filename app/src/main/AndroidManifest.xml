@@ -10,6 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Tool.ToolDetailActivity"></activity>
+        <activity android:name=".Tool.ToolActivity" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
@@ -48,7 +50,7 @@
         <activity android:name=".Experiment.ExperimentActivity" />
         <activity
             android:name=".Pop"
-            android:theme="@style/AppTheme.Pop"></activity>
+            android:theme="@style/AppTheme.Pop" />
     </application>
 
 </manifest>
