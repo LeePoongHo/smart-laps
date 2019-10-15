@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- For Splash Screen -->
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
     </style>
@@ -9,16 +9,22 @@
         <item name="android:layout_marginBottom">10dp</item>
         <item name="android:textColor">@color/colorTitle</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">15dp</item>
+        <item name="android:textSize">16dp</item>
     </style>
     <style name="DetailTextView"  parent="@android:style/Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/colorContent</item>
-        <item name="android:textSize">10dp</item>
+        <item name="android:textSize">12dp</item>
     </style>
     <style name="AppTheme.Pop">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+    <style name="ElevationLayout" >
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:elevation" tools:targetApi="lollipop">5dp</item>
+        <item name="android:padding">10dp</item>
     </style>
 </resources>

@@ -20,12 +20,9 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:elevation="10dp"
-                android:padding="10dp"
-                android:background="#ffffff"
+                style="@style/ElevationLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <TextView

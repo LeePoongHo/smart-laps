@@ -4,9 +4,8 @@
     android:id="@+id/activity_safety_rule"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context="com.example.leeph.smartlaps.SafetyRuleActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.leeph.smartlaps.SafetyRuleActivity">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,44 +14,42 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <LinearLayout
-                android:elevation="5dp"
-                android:padding="10dp"
-                android:background="#ffffff"
+                style="@style/ElevationLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <TextView
                     style="@style/TitleTextView"
-                    android:text="@string/laboratorySafetyInstructions"/>
+                    android:text="@string/laboratorySafetyInstructions" />
 
                 <TextView
                     style="@style/DetailTextView"
-                    android:text="@string/laboratorySafetyInstructionDetail"/>
+                    android:text="@string/laboratorySafetyInstructionDetail" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:padding="10dp"
-                android:elevation="5dp"
-                android:background="#ffffff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginBottom="20dp"
-                android:orientation="vertical">
+                android:background="#ffffff"
+                android:elevation="5dp"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <TextView
                     style="@style/TitleTextView"
-                    android:text="@string/laboratorySafetyInstruction2"/>
+                    android:text="@string/laboratorySafetyInstruction2" />
 
                 <TextView
                     style="@style/DetailTextView"
-                    android:text="@string/laboratorySafetyInstructionDetail2"/>
+                    android:text="@string/laboratorySafetyInstructionDetail2" />
             </LinearLayout>
 
         </LinearLayout>

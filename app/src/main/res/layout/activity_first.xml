@@ -4,10 +4,10 @@
     android:id="@+id/activity_first"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.leeph.smartlaps.FirstActivity">
 
     <LinearLayout
@@ -20,24 +20,23 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/menuBtn1"
-                android:layout_marginRight="5dp"
-                android:drawableTop="@drawable/ic_android_black_24dp"
-                android:text="@string/safetyRule"/>
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:id="@+id/menuBtn2"
                 android:drawableTop="@drawable/ic_android_black_24dp"
-                android:text="@string/drug"/>
+                android:text="@string/safetyRule"
+                android:theme="@style/Widget.Button.Primary" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/menuBtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:text="@string/drug"
+                android:theme="@style/Widget.Button.Primary" />
 
         </LinearLayout>
 
@@ -46,24 +45,24 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/menuBtn3"
-                android:layout_marginRight="5dp"
-                android:drawableTop="@drawable/ic_android_black_24dp"
-                android:text="@string/LaboratoryToolsAndInstruments"/>
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:id="@+id/menuBtn4"
                 android:drawableTop="@drawable/ic_android_black_24dp"
-                android:text="@string/ExperimentMethod"/>
+                android:text="@string/LaboratoryToolsAndInstruments"
+                android:theme="@style/Widget.Button.Primary" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/menuBtn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:text="@string/ExperimentMethod"
+                android:theme="@style/Widget.Button.Primary" />
 
         </LinearLayout>
 

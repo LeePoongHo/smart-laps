@@ -4,10 +4,10 @@
     android:id="@+id/activity_safety_rule"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.leeph.smartlaps.ChemistryActivity">
 
     <ScrollView
@@ -20,76 +20,68 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:elevation="10dp"
-                android:padding="10dp"
-                android:background="#ffffff"
+                style="@style/ElevationLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <TextView
+                    style="@style/TitleTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorTitle"
-                    android:textStyle="bold"
-                    android:textSize="15dp"
-                    android:text="@string/chemicalCommon"/>
+                    android:text="@string/chemicalCommon" />
 
                 <TextView
+                    style="@style/DetailTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorContent"
-                    android:textSize="10dp"
-                    android:text="위해화학물질이 눈에 들어갔을 경우에 신속히 물로 세척한다.\n\n실험 중 배기후드의 문은 최소(1/3이하)로 열려진 상태를 유지하도록 한다.\n\n물질안전보건자료(MSDS) 내용을 항시 숙지한다.\n\n모든 시약의 용기에는 표식을 전면부에 부착한다.\n\n시약은 종류별로 시약장에 보관하고, 시약용기는 사용 후 항상 원래의 보관 장소에 놓아 보관한다.\n\n발열반응 화학 실험은 특히 주의를 기울여 실험에 임한다.\n\n연구실과 저장소 사이에 시약을 이동할 경우 안전한 운반 장비를 사용한다.\n\n유기/무기물질은 시약장에 분류 보관하고 증기를 흡기할 수 있는 닥트시설이 연결되어야 한다."/>
+                    android:text="위해화학물질이 눈에 들어갔을 경우에 신속히 물로 세척한다.\n\n실험 중 배기후드의 문은 최소(1/3이하)로 열려진 상태를 유지하도록 한다.\n\n물질안전보건자료(MSDS) 내용을 항시 숙지한다.\n\n모든 시약의 용기에는 표식을 전면부에 부착한다.\n\n시약은 종류별로 시약장에 보관하고, 시약용기는 사용 후 항상 원래의 보관 장소에 놓아 보관한다.\n\n발열반응 화학 실험은 특히 주의를 기울여 실험에 임한다.\n\n연구실과 저장소 사이에 시약을 이동할 경우 안전한 운반 장비를 사용한다.\n\n유기/무기물질은 시약장에 분류 보관하고 증기를 흡기할 수 있는 닥트시설이 연결되어야 한다." />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:baselineAligned="false"
                 android:padding="5dp">
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="10dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"
+                <android.support.v7.widget.AppCompatButton
                     android:id="@+id/FlammableLiquidsBtn"
-                    android:text="@string/FlammableLiquids"/>
-
-                <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="10dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"
+                    android:minLines="2"
+                    android:text="@string/FlammableLiquids"
+                    android:theme="@style/Widget.Button.Primary" />
+
+                <android.support.v7.widget.AppCompatButton
                     android:id="@+id/oxidantBtn"
-                    android:text="@string/oxidantTitle"/>
-
-                <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="10dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"
+                    android:minLines="2"
+                    android:text="@string/oxidantTitle"
+                    android:theme="@style/Widget.Button.Primary" />
+
+                <android.support.v7.widget.AppCompatButton
                     android:id="@+id/toxicBtn"
-                    android:text="@string/Toxic"/>
-
-                <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="10dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"
+                    android:minLines="2"
+                    android:text="@string/Toxic"
+                    android:theme="@style/Widget.Button.Primary" />
+
+                <android.support.v7.widget.AppCompatButton
                     android:id="@+id/acidBtn"
-                    android:text="@string/acid"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minLines="2"
+                    android:text="@string/acid"
+                    android:theme="@style/Widget.Button.Primary" />
             </LinearLayout>
 
         </LinearLayout>

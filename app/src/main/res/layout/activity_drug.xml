@@ -16,6 +16,7 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.LinearLayoutCompat
+            style="@style/ElevationLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
@@ -25,30 +26,36 @@
                 android:id="@+id/btnPVA"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:text="@string/strPVA" />
+                android:text="@string/strPVA"
+                android:theme="@style/Widget.Button.Primary" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnWater"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:text="@string/strWater" />
+                android:text="@string/strWater"
+                android:theme="@style/Widget.Button.Primary" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnEthanol"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:text="@string/strEthanol" />
+                android:text="@string/strEthanol"
+                android:theme="@style/Widget.Button.Primary" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnToluene"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:text="@string/strToluene" />
+                android:text="@string/strToluene"
+                android:theme="@style/Widget.Button.Primary" />
+
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnBenzene"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:text="@string/strBenzene" />
+                android:text="@string/strBenzene"
+                android:theme="@style/Widget.Button.Primary" />
         </android.support.v7.widget.LinearLayoutCompat>
 
 

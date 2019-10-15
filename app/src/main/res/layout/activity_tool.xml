@@ -18,7 +18,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                style="@style/ElevationLayout"
+                android:orientation="vertical"
+                >
 
                 <TextView
                     style="@style/TitleTextView"
@@ -28,30 +30,35 @@
                     android:id="@+id/btnHeatingMantle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strHeatingMantle" />
+                    android:text="@string/strHeatingMantle"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnElectronicScale"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strElectronicScale" />
+                    android:text="@string/strElectronicScale"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnAgitator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strAgitator" />
+                    android:text="@string/strAgitator"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnHotPlate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strHotPlate" />
+                    android:text="@string/strHotPlate"
+                    android:theme="@style/Widget.Button.Primary" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/ElevationLayout"
                 android:orientation="vertical">
 
                 <TextView
@@ -62,73 +69,85 @@
                     android:id="@+id/btnBeaker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strBeaker" />
+                    android:text="@string/strBeaker"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnErlenmeyerFlask"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strErlenmeyerFlask" />
+                    android:text="@string/strErlenmeyerFlask"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnMeasuringFlask"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strMeasuringFlask" />
+                    android:text="@string/strMeasuringFlask"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnMeasuringCylinder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strMeasuringCylinder" />
+                    android:text="@string/strMeasuringCylinder"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnSuctionFlask"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strSuctionFlask" />
+                    android:text="@string/strSuctionFlask"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnBuchnerFunnel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strBuchnerFunnel" />
+                    android:text="@string/strBuchnerFunnel"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnOstwald"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strOstwald" />
+                    android:text="@string/strOstwald"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnClamp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strClamp" />
+                    android:text="@string/strClamp"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnStand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strStand" />
+                    android:text="@string/strStand"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnDeanStarkTrap"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strDeanStarkTrap" />
+                    android:text="@string/strDeanStarkTrap"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnRefluxCondenser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strRefluxCondenser" />
+                    android:text="@string/strRefluxCondenser"
+                    android:theme="@style/Widget.Button.Primary" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btnPipette"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/strPipette" />
+                    android:text="@string/strPipette"
+                    android:theme="@style/Widget.Button.Primary" />
             </LinearLayout>
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v4.widget.NestedScrollView>
