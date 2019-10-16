@@ -84,7 +84,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/btn_rounded"
                 android:text="로그인"
                 android:id="@+id/loginBtn"
                 android:layout_marginTop="10dp"
