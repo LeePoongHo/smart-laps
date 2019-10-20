@@ -3,6 +3,8 @@ package com.example.leeph.smartlaps;
 import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -45,6 +47,8 @@ public class RegisterActivity extends AppCompatActivity {
         RadioGroup genderGroup = (RadioGroup) findViewById(R.id.genderGroup);
         int genderGroupID = genderGroup.getCheckedRadioButtonId();
         userGender = ((RadioButton) findViewById(genderGroupID)).getText().toString();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         genderGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -183,5 +187,15 @@ public class RegisterActivity extends AppCompatActivity {
             dialog.dismiss();
             dialog = null;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

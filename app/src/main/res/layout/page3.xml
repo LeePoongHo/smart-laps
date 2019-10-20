@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TitleTextView"
+            android:gravity="center"
+            android:text="고분자 용액 및 분자량분석실험"/>
+
+        <LinearLayout
+            style="@style/ElevationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TitleTextView"
+                android:text="용해도 측정실험" />
+
+            <TextView
+                style="@style/DetailTextView"
+                android:text="@string/strEx3" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Experiment.ExperimentSeletedClass">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ElevationLayout"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    style="@style/TitleTextView"
+                    android:text="화학공학실험" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/ex1Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="관내유체유동실험"
+                    android:theme="@style/Widget.Button.Primary" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/ex2Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="이중관열교환 공정실험"
+                    android:theme="@style/Widget.Button.Primary" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/ex3Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="입자침강실험"
+                    android:theme="@style/Widget.Button.Primary" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/ex4Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="고분자용액 및 분자량 분석실험"
+                    android:theme="@style/Widget.Button.Primary" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/ex5Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="연속교반 반응 공정실험"
+                    android:theme="@style/Widget.Button.Primary" />
+            </LinearLayout>
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.v7.widget.LinearLayoutCompat>

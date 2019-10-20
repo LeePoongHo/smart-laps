@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:drawableTop="@drawable/ic_enhanced_encryption_black_24dp"
                 android:text="@string/safetyRule"
                 android:theme="@style/Widget.Button.Primary" />
 
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:drawableTop="@drawable/ic_colorize_black_24dp"
                 android:text="@string/drug"
                 android:theme="@style/Widget.Button.Primary" />
 
@@ -49,9 +49,8 @@
                 android:id="@+id/menuBtn3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:drawableTop="@drawable/ic_build_black_24dp"
                 android:text="@string/LaboratoryToolsAndInstruments"
                 android:theme="@style/Widget.Button.Primary" />
 
@@ -60,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:drawableTop="@drawable/ic_group_black_24dp"
                 android:text="@string/ExperimentMethod"
                 android:theme="@style/Widget.Button.Primary" />
 

@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:drawableTop="@drawable/ic_account_circle_black_24dp"
                 android:text="@string/basicRule"
                 android:theme="@style/Widget.Button.Primary" />
 
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/ic_android_black_24dp"
+                android:drawableTop="@drawable/ic_invert_colors_black_24dp"
                 android:text="@string/chemicalSubstance"
                 android:theme="@style/Widget.Button.Primary" />
 

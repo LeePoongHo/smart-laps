@@ -1,10 +1,11 @@
 package com.example.leeph.smartlaps.Experiment;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,6 +20,8 @@ public class ExperimentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_experiment);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final int[] selectedItem = {0};
 
@@ -41,6 +44,8 @@ public class ExperimentActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Toast.makeText(ExperimentActivity.this, items[selectedItem[0]], Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(ExperimentActivity.this, ExperimentSeletedClass.class);
+                                startActivity(intent);
                             }
                         })
                         .setNeutralButton("취소", new DialogInterface.OnClickListener() {
@@ -53,6 +58,16 @@ public class ExperimentActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

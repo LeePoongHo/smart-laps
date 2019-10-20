@@ -3,6 +3,7 @@ package com.example.leeph.smartlaps.Drug;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,6 +15,8 @@ public class DrugActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         btnPVA = (Button) findViewById(R.id.btnPVA);
         btnWater = (Button) findViewById(R.id.btnWater);
         btnEthanol = (Button) findViewById(R.id.btnEthanol);
@@ -56,5 +59,15 @@ public class DrugActivity extends AppCompatActivity {
         Intent intent = new Intent(DrugActivity.this, DrugDetailActivity.class);
         intent.putExtra("drug", drug);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

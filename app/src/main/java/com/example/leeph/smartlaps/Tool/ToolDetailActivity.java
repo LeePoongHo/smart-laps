@@ -2,6 +2,7 @@ package com.example.leeph.smartlaps.Tool;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class ToolDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool_detail);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         txtToolTitle = (TextView) findViewById(R.id.txtToolTitle);
         txtToolUse = (TextView) findViewById(R.id.txtToolUse);
@@ -34,5 +36,15 @@ public class ToolDetailActivity extends AppCompatActivity {
             imgToolDetail.setImageResource(R.drawable.img_reflux_condenser_example);
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

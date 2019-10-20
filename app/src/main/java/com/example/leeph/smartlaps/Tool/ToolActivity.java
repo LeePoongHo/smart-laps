@@ -3,6 +3,7 @@ package com.example.leeph.smartlaps.Tool;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,6 +17,8 @@ public class ToolActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tool);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         btnHeatingMantle = (Button) findViewById(R.id.btnHeatingMantle);
         btnElectronicScale = (Button) findViewById(R.id.btnElectronicScale);
         btnAgitator = (Button) findViewById(R.id.btnAgitator);
@@ -42,5 +45,15 @@ public class ToolActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

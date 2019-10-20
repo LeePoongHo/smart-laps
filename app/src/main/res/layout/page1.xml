@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TitleTextView"
+            android:gravity="center"
+            android:text="고분자 용액 및 분자량분석실험"/>
+
+        <LinearLayout
+            style="@style/ElevationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TitleTextView"
+                android:text="실험도구" />
+
+            <TextView
+                style="@style/DetailTextView"
+                android:text=" - 오스왈드(Ostwald) 점도계\n\n - 온도계, 매스플라스크 100mL\n\n - 교반기\n\n - 마그네틱바\n\n - 초시계" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ElevationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TitleTextView"
+                android:text="실험시약" />
+
+            <TextView
+                style="@style/DetailTextView"
+                android:text=" - Poly(vinyl alcohol) (PVA)\n\n - 증류수\n\n - 에탄올\n\n - 톨루엔\n\n - 벤젠" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
