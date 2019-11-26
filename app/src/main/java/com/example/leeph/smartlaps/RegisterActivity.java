@@ -3,7 +3,6 @@ package com.example.leeph.smartlaps;
 import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -40,8 +39,8 @@ public class RegisterActivity extends AppCompatActivity {
         adapter = ArrayAdapter.createFromResource(this, R.array.major, android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        final EditText idText = (EditText) findViewById(R.id.idText);
-        final EditText passwordText = (EditText) findViewById(R.id.passwordText);
+        final EditText idText = (EditText) findViewById(R.id.txtId);
+        final EditText passwordText = (EditText) findViewById(R.id.txtPassword);
         final EditText emailText = (EditText) findViewById(R.id.emailText);
 
         RadioGroup genderGroup = (RadioGroup) findViewById(R.id.genderGroup);
