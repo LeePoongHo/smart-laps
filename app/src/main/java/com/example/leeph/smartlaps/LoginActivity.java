@@ -1,24 +1,22 @@
 package com.example.leeph.smartlaps;
 
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.example.leeph.smartlaps.Service.MemberService;
+import com.example.leeph.smartlaps.Service.MemberServiceClass;
 
-import static android.widget.Toast.LENGTH_SHORT;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static java.net.HttpURLConnection.HTTP_OK;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -29,10 +27,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        txtId = (EditText) findViewById(R.id.txtId);
-        txtPassword = (EditText) findViewById(R.id.txtPassword);
+        txtId = findViewById(R.id.txtId);
+        txtPassword = findViewById(R.id.txtPassword);
 
-        TextView information = (TextView) findViewById(R.id.information);
+        TextView information = findViewById(R.id.information);
         information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,69 +38,68 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        TextView registerButton = (TextView) findViewById(R.id.registerButton);
+        TextView registerButton = findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-                LoginActivity.this.startActivity(registerIntent);
+                startActivity(registerIntent);
             }
         });
 
-        TextView loginButton = (TextView) findViewById(R.id.loginBtn);
+        TextView loginButton = findViewById(R.id.loginBtn);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
+                MemberService memberService = MemberServiceClass.createRetrofit().create(MemberService.class);
+                Call<String> call = memberService.doLogin(txtId.getText().toString(), txtPassword.getText().toString());
+                call.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        if (response.code() == HTTP_OK) {
+                            String result = response.body();
+                            if (result.equals("true")){
+                                Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                                Intent registerIntent = new Intent(LoginActivity.this, FirstActivity.class);
+                                startActivity(registerIntent);
+                                finish();
+                            }else {
+                                Toast.makeText(LoginActivity.this, "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(LoginActivity.this, "서버 에러", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Toast.makeText(LoginActivity.this, "네트워크 오류", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                /*try {
                     String result;
-                    CustomTask task = new CustomTask();
-                    result = task.execute(txtId.getText().toString(),txtPassword.getText().toString()).get();
-                    Log.i("리턴 값",result.substring(4));
-                    if(result.substring(4,8).equals("true")){
-                        Toast.makeText(LoginActivity.this,"로그인 성공", LENGTH_SHORT).show();
+                    CustomTask task = new CustomTask("http://192.168.219.107:8080/ProjectDelivery/LoginProc.jsp");
+                    result = task.execute(txtId.getText().toString(), txtPassword.getText().toString()).get();
+                    Log.i("리턴 값", result.substring(4));
+                    if (result.substring(4, 8).equals("true")) {
+                        Toast.makeText(LoginActivity.this, "로그인 성공", LENGTH_SHORT).show();
                         Intent registerIntent = new Intent(LoginActivity.this, FirstActivity.class);
                         LoginActivity.this.startActivity(registerIntent);
+                        new CustomTask("") {
+                            @Override
+                            protected String doInBackground(String... strings) {
+                                return super.doInBackground(strings);
+                            }
+                        };
+                        finish();
                     }
                 } catch (Exception e) {
 
-                }
+                }*/
             }
         });
     }
 
-    class CustomTask extends AsyncTask<String, Void, String> {
-        String sendMsg, receiveMsg;
-        @Override
-        protected String doInBackground(String... strings) {
-            try {
-                String str;
-                URL url = new URL("http://192.168.219.107:8080/ProjectDelivery/LoginProc.jsp");
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                conn.setRequestMethod("POST");
-                OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
-                sendMsg = "mem_id="+strings[0]+"&mem_passwd="+strings[1];
-                osw.write(sendMsg);
-                osw.flush();
-                if(conn.getResponseCode() == conn.HTTP_OK) {
-                    InputStreamReader tmp = new InputStreamReader(conn.getInputStream(), "utf-8");
-                    BufferedReader reader = new BufferedReader(tmp);
-                    StringBuffer buffer = new StringBuffer();
-                    while ((str = reader.readLine()) != null) {
-                        buffer.append(str);
-                    }
-                    receiveMsg = buffer.toString();
 
-                } else {
-                    Log.i("통신 결과", conn.getResponseCode()+"에러");
-                }
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return receiveMsg;
-        }
-    }
 }
