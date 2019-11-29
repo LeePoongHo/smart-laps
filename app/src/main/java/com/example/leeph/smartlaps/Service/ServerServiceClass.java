@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by fopa on 2017-12-06.
  */
 
-public class MemberServiceClass {
+public class ServerServiceClass {
     static OkHttpClient createOkHttpClient() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.addInterceptor(new HeaderInterceptor());

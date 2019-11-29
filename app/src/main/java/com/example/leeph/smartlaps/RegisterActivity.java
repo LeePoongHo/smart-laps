@@ -16,8 +16,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.leeph.smartlaps.Service.MemberService;
-import com.example.leeph.smartlaps.Service.MemberServiceClass;
+import com.example.leeph.smartlaps.Service.ServerService;
+import com.example.leeph.smartlaps.Service.ServerServiceClass;
 import com.example.leeph.smartlaps.Service.RegisterBean;
 
 import java.io.IOException;
@@ -135,15 +135,16 @@ public class RegisterActivity extends AppCompatActivity {
         registerBean.setMem_passwd(userPassword);
         registerBean.setMem_email(userEmail);
         registerBean.setMem_name(userMajor);
+        registerBean.setMem_sex(userGender);
 
-        MemberService memberService = MemberServiceClass.retrofit.create(MemberService.class);
-        Call<String> call = memberService.doRegister(registerBean.getMem_id(),registerBean.getMem_passwd(),registerBean.getMem_email(),
-                registerBean.getMem_sex(),registerBean.getMem_passwd());
+        ServerService serverService = ServerServiceClass.retrofit.create(ServerService.class);
+        Call<String> call = serverService.postRegister(registerBean.getMem_id(),registerBean.getMem_passwd(),registerBean.getMem_email(),
+                registerBean.getMem_sex(),registerBean.getMem_name());
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 if (response.code() == HTTP_OK) {
-                    String result = response.body().toString();
+                    String result = response.body();
                     Log.i("리턴 값", response.message() + "/" + result);
                     if (result.equals("true")) {
                         Toast.makeText(RegisterActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
@@ -179,8 +180,8 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        MemberService memberService = MemberServiceClass.retrofit.create(MemberService.class);
-        Call<ResponseBody> call = memberService.doIdCheck(userID);
+        ServerService serverService = ServerServiceClass.retrofit.create(ServerService.class);
+        Call<ResponseBody> call = serverService.postIdCheck(userID);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

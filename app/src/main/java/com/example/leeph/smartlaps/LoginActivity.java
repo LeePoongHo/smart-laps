@@ -9,8 +9,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.leeph.smartlaps.Service.MemberService;
-import com.example.leeph.smartlaps.Service.MemberServiceClass;
+import com.example.leeph.smartlaps.Service.Notice;
+import com.example.leeph.smartlaps.Service.ServerService;
+import com.example.leeph.smartlaps.Service.ServerServiceClass;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,9 +57,9 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MemberService memberService = MemberServiceClass.createRetrofit().create(MemberService.class);
-                Call<String> call = memberService.doLogin(txtId.getText().toString(), txtPassword.getText().toString());
-                call.enqueue(new Callback<String>() {
+                ServerService serverService = ServerServiceClass.createRetrofit().create(ServerService.class);
+                /*Call<String> loginCall = serverService.postLogin(txtId.getText().toString(), txtPassword.getText().toString());
+                loginCall.enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         if (response.code() == HTTP_OK) {
@@ -75,6 +81,50 @@ public class LoginActivity extends AppCompatActivity {
                     public void onFailure(Call<String> call, Throwable t) {
                         Toast.makeText(LoginActivity.this, "네트워크 오류", Toast.LENGTH_SHORT).show();
 
+                    }
+                });*/
+
+                /*Call<JsonArray> getNoticeListCall = serverService.getNoticeList();
+                getNoticeListCall.enqueue(new Callback<JsonArray>() {
+                    @Override
+                    public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
+                        if (response.code() == HTTP_OK) {
+                            JsonArray jsonArray = response.body();
+                            Notice notice = new Gson().fromJson(jsonArray.get(0), Notice.class);
+                            JsonElement jsonObject = jsonArray.get(1);
+                            Log.i("리턴 값", response.message() + " / " +jsonObject.getAsJsonObject() + "//" + notice.getTitle());
+                        } else {
+                            Toast.makeText(LoginActivity.this, "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<JsonArray> call, Throwable t) {
+                        Toast.makeText(LoginActivity.this, "네트워크 오류", Toast.LENGTH_SHORT).show();
+                    }
+                });*/
+
+                Notice notice = new Notice();
+                notice.setNo(1);
+                notice.setTitle("third");
+                notice.setContent("3");
+                notice.setMem_id("ad");
+                notice.setMem_name("ad");
+                notice.setWrite_date(Long.toString(new Date().getTime()));
+                Call<String> postNotice = serverService.postNotice(new Gson().toJson(notice));
+                postNotice.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        if (response.code() == HTTP_OK) {
+                            Log.i("리턴 값", response.message() + " / " + response.body());
+                        } else {
+                            Toast.makeText(LoginActivity.this, "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Toast.makeText(LoginActivity.this, "네트워크 오류", Toast.LENGTH_SHORT).show();
                     }
                 });
                 /*try {
