@@ -52,7 +52,9 @@
             android:name=".Pop"
             android:theme="@style/AppTheme.Pop" />
         <activity android:name=".Experiment.ExperimentSeletedClass" />
-        <activity android:name=".Experiment.ExperimentDetailActivity"></activity>
+        <activity android:name=".Experiment.ExperimentDetailActivity" />
+        <activity android:name=".NoticeDetailActivity" />
+        <activity android:name=".NoticeWriteActivity"></activity>
     </application>
 
 </manifest>
