@@ -15,10 +15,25 @@ import android.widget.Toast;
 
 import com.example.leeph.smartlaps.Drug.DrugActivity;
 import com.example.leeph.smartlaps.Experiment.ExperimentActivity;
+import com.example.leeph.smartlaps.Notice.NoticeDetailActivity;
+import com.example.leeph.smartlaps.Notice.NoticeListAdapter;
+import com.example.leeph.smartlaps.Notice.NoticeWriteActivity;
+import com.example.leeph.smartlaps.Service.Notice;
+import com.example.leeph.smartlaps.Service.ServerService;
+import com.example.leeph.smartlaps.Service.ServerServiceClass;
 import com.example.leeph.smartlaps.Tool.ToolActivity;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
+import static java.net.HttpURLConnection.HTTP_OK;
 
 public class FirstActivity extends AppCompatActivity {
 
@@ -29,22 +44,34 @@ public class FirstActivity extends AppCompatActivity {
     boolean bLog = false; // false : 로그아웃 상태
 
     @Override
+    protected void onStart() {
+        String memId = MySharedPreference.getInstance().getPreferences(this,"mem_id");
+        if (memId.isEmpty()){
+            doLogout();
+        }
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        String memId = MySharedPreference.getInstance().getPreferences(this,"mem_id");
+        if (memId.isEmpty()){
+            doLogout();
+        }
+        noticeList.clear();
+        callNoticeList();
+        super.onResume();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
-        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab_1);
+        FloatingActionButton floatingActionButton = findViewById(R.id.fab_1);
 
-        noticeListView = (ListView)findViewById(R.id.noticeListView);
-        noticeList = new ArrayList<Notice>();
-        noticeList.add(new Notice("공지사항입니다.", "이풍호", "2019-11-27 08:32:13"));
-        noticeList.add(new Notice("공지사항입니다.", "이풍호", "2019-11-27 08:32:13"));
-        noticeList.add(new Notice("공지사항입니다.", "이풍호", "2019-11-27 08:32:13"));
-        noticeList.add(new Notice("공지사항입니다.", "이풍호", "2019-11-27 08:32:13"));
-        noticeList.add(new Notice("공지사항입니다.", "이풍호", "2019-11-27 08:32:13"));
-        noticeList.add(new Notice("공지사항입니다.", "이풍호", "2019-11-27 08:32:13"));
-        noticeList.add(new Notice("공지사항입니다.", "이풍호", "2019-11-27 08:32:13"));
-        noticeList.add(new Notice("공지사항입니다.", "이풍호", "2019-11-27 08:32:13"));
 
+        noticeListView = findViewById(R.id.noticeListView);
+        noticeList = new ArrayList<>();
         adapter = new NoticeListAdapter(getApplicationContext(), noticeList);
         noticeListView.setAdapter(adapter);
 
@@ -52,18 +79,18 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), NoticeDetailActivity.class);
-                intent.putExtra("title", noticeList.get(position).getNotice());
-                intent.putExtra("name", noticeList.get(position).getName());
-                intent.putExtra("date", noticeList.get(position).getDate());
+                intent.putExtra("title", noticeList.get(position).getTitle());
+                intent.putExtra("name", noticeList.get(position).getMem_name());
+                intent.putExtra("date", noticeList.get(position).getWrite_date());
                 startActivity(intent);
 
             }
         });
 
-        btnSafety = (Button) findViewById(R.id.menuBtn1);
-        btnDrug = (Button) findViewById(R.id.menuBtn2);
-        btnTool = (Button) findViewById(R.id.menuBtn3);
-        btnExperience = (Button) findViewById(R.id.menuBtn4);
+        btnSafety = findViewById(R.id.menuBtn1);
+        btnDrug = findViewById(R.id.menuBtn2);
+        btnTool = findViewById(R.id.menuBtn3);
+        btnExperience = findViewById(R.id.menuBtn4);
 
         btnSafety.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +135,34 @@ public class FirstActivity extends AppCompatActivity {
 
     }
 
+    private void callNoticeList() {
+        ServerService serverService = ServerServiceClass.createRetrofit().create(ServerService.class);
+        Call<JsonArray> getNoticeListCall = serverService.getNoticeList();
+        getNoticeListCall.enqueue(new Callback<JsonArray>() {
+            @Override
+            public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
+                if (response.code() == HTTP_OK) {
+                    JsonArray jsonArray = response.body();
+                    int i = jsonArray.size();
+                    while (--i >= 0) {
+                        Notice notice = new Gson().fromJson(jsonArray.get(i), Notice.class);
+                        noticeList.add(notice);
+                        Log.i("공지사항", notice.getTitle());
+                    }
+                    adapter.notifyDataSetChanged();
+                    Log.i("리턴 값", response.message() + " / " + response.body().size());
+                } else {
+                    Toast.makeText(getApplicationContext(), "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonArray> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "네트워크 오류", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -120,9 +175,8 @@ public class FirstActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        Log.d("test", "onPrepareOptionsMenu - 옵션메뉴가 " +
-                "화면에 보여질때 마다 호출됨");
-        if(bLog){ // 로그인 한 상태: 로그인은 안보이게, 로그아웃은 보이게
+
+        /*if(bLog){ // 로그인 한 상태: 로그인은 안보이게, 로그아웃은 보이게
             menu.getItem(0).setEnabled(true);
             menu.getItem(1).setEnabled(false);
         }else{ // 로그 아웃 한 상태 : 로그인 보이게, 로그아웃은 안보이게
@@ -130,7 +184,7 @@ public class FirstActivity extends AppCompatActivity {
             menu.getItem(1).setEnabled(true);
         }
 
-        bLog = !bLog;   // 값을 반대로 바꿈
+        bLog = !bLog;   // 값을 반대로 바꿈*/
 
         return super.onPrepareOptionsMenu(menu);
     }
@@ -146,15 +200,19 @@ public class FirstActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         switch(id) {
-            case R.id.menu_login:
-                Toast.makeText(getApplicationContext(), "로그인 메뉴 클릭",
-                        Toast.LENGTH_SHORT).show();
-                return true;
             case R.id.menu_logout:
-                Toast.makeText(getApplicationContext(), "로그아웃 메뉴 클릭",
+                Toast.makeText(getApplicationContext(), "로그아웃",
                         Toast.LENGTH_SHORT).show();
+                doLogout();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void doLogout() {
+        MySharedPreference.getInstance().removeAllPreferences(FirstActivity.this);
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }

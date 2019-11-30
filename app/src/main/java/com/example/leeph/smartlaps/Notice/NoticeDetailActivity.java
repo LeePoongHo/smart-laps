@@ -1,10 +1,12 @@
-package com.example.leeph.smartlaps;
+package com.example.leeph.smartlaps.Notice;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.example.leeph.smartlaps.R;
 
 public class NoticeDetailActivity extends AppCompatActivity {
 
@@ -17,10 +19,10 @@ public class NoticeDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        TextView noticeTitle = (TextView) findViewById(R.id.noticeTitle);
+        TextView noticeTitle = (TextView) findViewById(R.id.editNoticeTitle);
         TextView noticeName = (TextView) findViewById(R.id.noticeName);
         TextView noticeDate = (TextView) findViewById(R.id.noticeDate);
-        TextView noticeContent = (TextView) findViewById(R.id.noticeContent);
+        TextView noticeContent = (TextView) findViewById(R.id.editNoticeContent);
 
         noticeTitle.setText(intent.getStringExtra("title"));
         noticeName.setText(intent.getStringExtra("name"));

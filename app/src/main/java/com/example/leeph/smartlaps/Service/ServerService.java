@@ -3,6 +3,8 @@ package com.example.leeph.smartlaps.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -14,7 +16,7 @@ import retrofit2.http.Query;
 public interface ServerService {
 
     @POST("LoginProc.jsp")
-    Call<String> postLogin(
+    Call<JsonElement> postLogin(
             @Query("mem_id") String mem_id,
             @Query("mem_passwd") String mem_passwd
     );

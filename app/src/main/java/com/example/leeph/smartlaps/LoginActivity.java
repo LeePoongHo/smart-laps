@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.leeph.smartlaps.Service.Notice;
+import com.example.leeph.smartlaps.Service.RegisterBean;
 import com.example.leeph.smartlaps.Service.ServerService;
 import com.example.leeph.smartlaps.Service.ServerServiceClass;
 import com.google.gson.Gson;
@@ -58,19 +59,28 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ServerService serverService = ServerServiceClass.createRetrofit().create(ServerService.class);
-                /*Call<String> loginCall = serverService.postLogin(txtId.getText().toString(), txtPassword.getText().toString());
-                loginCall.enqueue(new Callback<String>() {
+                Call<JsonElement> loginCall = serverService.postLogin(txtId.getText().toString(), txtPassword.getText().toString());
+                loginCall.enqueue(new Callback<JsonElement>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
+                    public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
                         if (response.code() == HTTP_OK) {
-                            String result = response.body();
-                            if (result.equals("true")){
+                            JsonElement jsonElement = response.body();
+                            Log.i("리턴", jsonElement.toString());
+                            RegisterBean member = new Gson().fromJson( response.body(),RegisterBean.class);
+                            if (jsonElement.toString().equals("{}")){
+                                Toast.makeText(LoginActivity.this, "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
+                            }else {
+                                Log.i("리턴",member.getMem_id());
                                 Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_id",member.getMem_id());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_name",member.getMem_name());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_email",member.getMem_email());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_sex",member.getMem_sex());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_major",member.getMem_major());
+
                                 Intent registerIntent = new Intent(LoginActivity.this, FirstActivity.class);
                                 startActivity(registerIntent);
                                 finish();
-                            }else {
-                                Toast.makeText(LoginActivity.this, "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
                             }
                         } else {
                             Toast.makeText(LoginActivity.this, "서버 에러", Toast.LENGTH_SHORT).show();
@@ -78,55 +88,15 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
+                    public void onFailure(Call<JsonElement> call, Throwable t) {
                         Toast.makeText(LoginActivity.this, "네트워크 오류", Toast.LENGTH_SHORT).show();
 
-                    }
-                });*/
-
-                /*Call<JsonArray> getNoticeListCall = serverService.getNoticeList();
-                getNoticeListCall.enqueue(new Callback<JsonArray>() {
-                    @Override
-                    public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
-                        if (response.code() == HTTP_OK) {
-                            JsonArray jsonArray = response.body();
-                            Notice notice = new Gson().fromJson(jsonArray.get(0), Notice.class);
-                            JsonElement jsonObject = jsonArray.get(1);
-                            Log.i("리턴 값", response.message() + " / " +jsonObject.getAsJsonObject() + "//" + notice.getTitle());
-                        } else {
-                            Toast.makeText(LoginActivity.this, "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<JsonArray> call, Throwable t) {
-                        Toast.makeText(LoginActivity.this, "네트워크 오류", Toast.LENGTH_SHORT).show();
-                    }
-                });*/
-
-                Notice notice = new Notice();
-                notice.setNo(1);
-                notice.setTitle("third");
-                notice.setContent("3");
-                notice.setMem_id("ad");
-                notice.setMem_name("ad");
-                notice.setWrite_date(Long.toString(new Date().getTime()));
-                Call<String> postNotice = serverService.postNotice(new Gson().toJson(notice));
-                postNotice.enqueue(new Callback<String>() {
-                    @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
-                        if (response.code() == HTTP_OK) {
-                            Log.i("리턴 값", response.message() + " / " + response.body());
-                        } else {
-                            Toast.makeText(LoginActivity.this, "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<String> call, Throwable t) {
-                        Toast.makeText(LoginActivity.this, "네트워크 오류", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+                /**/
+
+                /**/
                 /*try {
                     String result;
                     CustomTask task = new CustomTask("http://192.168.219.107:8080/ProjectDelivery/LoginProc.jsp");

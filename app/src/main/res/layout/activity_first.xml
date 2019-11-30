@@ -86,7 +86,6 @@
         android:src="@drawable/ic_create_black_24dp"
         android:layout_margin="3dp"
         android:paddingTop="10dp"
-        app:fabSize="normal"
         app:backgroundTint="#FF4081"
         android:elevation="6dp"
         android:id="@+id/fab_1" />

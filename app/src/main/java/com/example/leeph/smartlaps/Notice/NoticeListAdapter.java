@@ -1,4 +1,4 @@
-package com.example.leeph.smartlaps;
+package com.example.leeph.smartlaps.Notice;
 
 import android.content.Context;
 import android.view.View;
@@ -6,6 +6,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.leeph.smartlaps.R;
+import com.example.leeph.smartlaps.Service.Notice;
+
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,17 +43,18 @@ public class NoticeListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v = View.inflate(context, R.layout.notice, null);
-        TextView noticeText = (TextView) v.findViewById(R.id.noticeText);
-        TextView nameText = (TextView) v.findViewById(R.id.nameText);
-        TextView dateText = (TextView) v.findViewById(R.id.dateText);
+        View view = View.inflate(context, R.layout.notice, null);
+        TextView noticeText = view.findViewById(R.id.noticeText);
+        TextView nameText = view.findViewById(R.id.nameText);
+        TextView dateText = view.findViewById(R.id.dateText);
 
-        noticeText.setText(noticeList.get(position).getNotice());
-        nameText.setText(noticeList.get(position).getName());
-        dateText.setText(noticeList.get(position).getDate());
+        noticeText.setText(noticeList.get(position).getTitle());
+        nameText.setText(noticeList.get(position).getMem_name());
+        dateText.setText(noticeList.get(position).getWrite_date());
 
-        v.setTag(noticeList.get(position).getNotice());
+        view.setTag(noticeList.get(position).getTitle());
 
-        return v;
+
+        return view;
     }
 }

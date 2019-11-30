@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    tools:context="com.example.leeph.smartlaps.NoticeDetailActivity">
+    tools:context="com.example.leeph.smartlaps.Notice.NoticeDetailActivity">
 
 
     <LinearLayout
@@ -21,7 +21,7 @@
 
         <TextView
             style="@style/TitleTextView"
-            android:id="@+id/noticeTitle"
+            android:id="@+id/editNoticeTitle"
             android:text="제목입니다."/>
 
         <TextView
@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/noticeContent"
+            android:id="@+id/editNoticeContent"
             android:text="상세내용입니다."/>
     </LinearLayout>
 

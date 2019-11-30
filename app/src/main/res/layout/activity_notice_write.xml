@@ -6,61 +6,73 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    tools:context="com.example.leeph.smartlaps.NoticeWriteActivity">
+    tools:context="com.example.leeph.smartlaps.Notice.NoticeWriteActivity">
 
-
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:orientation="vertical">
-        <TextView
-            style="@style/TitleTextView"
-            android:text="제목"/>
+        android:layout_height="wrap_content">
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:id="@+id/noticeTitle"
-            android:background="@drawable/edit"
-            android:cursorVisible="true" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:orientation="vertical">
-        <TextView
-            style="@style/TitleTextView"
-            android:text="상세내용"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/edit"
-            android:id="@+id/noticeContent"
-            android:cursorVisible="true" />
-
-        <Button
-            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:background="@drawable/btn_rounded"
-            android:text="저장"
-            android:id="@+id/saveBtn"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"/>
+            android:orientation="vertical">
 
-    </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    style="@style/TitleTextView"
+                    android:text="제목" />
+
+                <EditText
+                    android:id="@+id/editNoticeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/edit"
+                    android:cursorVisible="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin">
+
+                <TextView
+                    style="@style/TitleTextView"
+                    android:text="상세내용" />
+
+                <EditText
+                    android:id="@+id/editNoticeContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit"
+                    android:cursorVisible="true" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btn_rounded"
+                    android:text="저장"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

@@ -7,6 +7,7 @@ public class RegisterBean {
     private String mem_sex;
     private String mem_name;
     private String mem_email;
+    private String mem_major;
     
 
     public void setMem_id(String mem_id) {
@@ -47,6 +48,14 @@ public class RegisterBean {
 
     public String getMem_sex() {
         return mem_sex;
+    }
+
+    public String getMem_major() {
+        return mem_major;
+    }
+
+    public void setMem_major(String mem_major) {
+        this.mem_major = mem_major;
     }
 }
 
