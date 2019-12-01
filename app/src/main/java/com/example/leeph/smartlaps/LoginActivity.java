@@ -9,15 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.leeph.smartlaps.Service.Notice;
 import com.example.leeph.smartlaps.Service.RegisterBean;
 import com.example.leeph.smartlaps.Service.ServerService;
 import com.example.leeph.smartlaps.Service.ServerServiceClass;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-
-import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -66,17 +62,17 @@ public class LoginActivity extends AppCompatActivity {
                         if (response.code() == HTTP_OK) {
                             JsonElement jsonElement = response.body();
                             Log.i("리턴", jsonElement.toString());
-                            RegisterBean member = new Gson().fromJson( response.body(),RegisterBean.class);
-                            if (jsonElement.toString().equals("{}")){
+                            RegisterBean member = new Gson().fromJson(response.body(), RegisterBean.class);
+                            if (jsonElement.toString().equals("{}")) {
                                 Toast.makeText(LoginActivity.this, "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
-                            }else {
-                                Log.i("리턴",member.getMem_id());
+                            } else {
+                                Log.i("리턴", member.getMem_id());
                                 Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_id",member.getMem_id());
-                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_name",member.getMem_name());
-                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_email",member.getMem_email());
-                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_sex",member.getMem_sex());
-                                MySharedPreference.getInstance().setPreferences(LoginActivity.this,"mem_major",member.getMem_major());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this, "mem_id", member.getMem_id());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this, "mem_name", member.getMem_name());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this, "mem_email", member.getMem_email());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this, "mem_sex", member.getMem_sex());
+                                MySharedPreference.getInstance().setPreferences(LoginActivity.this, "mem_major", member.getMem_major());
 
                                 Intent registerIntent = new Intent(LoginActivity.this, FirstActivity.class);
                                 startActivity(registerIntent);
@@ -94,29 +90,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-                /**/
-
-                /**/
-                /*try {
-                    String result;
-                    CustomTask task = new CustomTask("http://192.168.219.107:8080/ProjectDelivery/LoginProc.jsp");
-                    result = task.execute(txtId.getText().toString(), txtPassword.getText().toString()).get();
-                    Log.i("리턴 값", result.substring(4));
-                    if (result.substring(4, 8).equals("true")) {
-                        Toast.makeText(LoginActivity.this, "로그인 성공", LENGTH_SHORT).show();
-                        Intent registerIntent = new Intent(LoginActivity.this, FirstActivity.class);
-                        LoginActivity.this.startActivity(registerIntent);
-                        new CustomTask("") {
-                            @Override
-                            protected String doInBackground(String... strings) {
-                                return super.doInBackground(strings);
-                            }
-                        };
-                        finish();
-                    }
-                } catch (Exception e) {
-
-                }*/
             }
         });
     }

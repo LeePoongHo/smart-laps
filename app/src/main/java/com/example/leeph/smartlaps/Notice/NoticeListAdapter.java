@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.example.leeph.smartlaps.R;
 import com.example.leeph.smartlaps.Service.Notice;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -45,7 +44,7 @@ public class NoticeListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(context, R.layout.notice, null);
         TextView noticeText = view.findViewById(R.id.noticeText);
-        TextView nameText = view.findViewById(R.id.nameText);
+        TextView nameText = view.findViewById(R.id.txtName);
         TextView dateText = view.findViewById(R.id.dateText);
 
         noticeText.setText(noticeList.get(position).getTitle());

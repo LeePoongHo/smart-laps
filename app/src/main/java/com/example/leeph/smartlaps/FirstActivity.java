@@ -1,9 +1,9 @@
 package com.example.leeph.smartlaps;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,7 +31,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 import static java.net.HttpURLConnection.HTTP_OK;
 
@@ -41,12 +40,11 @@ public class FirstActivity extends AppCompatActivity {
     private ListView noticeListView;
     private NoticeListAdapter adapter;
     private List<Notice> noticeList;
-    boolean bLog = false; // false : 로그아웃 상태
 
     @Override
     protected void onStart() {
-        String memId = MySharedPreference.getInstance().getPreferences(this,"mem_id");
-        if (memId.isEmpty()){
+        String memId = MySharedPreference.getInstance().getPreferences(this, "mem_id");
+        if (memId.isEmpty()) {
             doLogout();
         }
         super.onStart();
@@ -54,8 +52,8 @@ public class FirstActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        String memId = MySharedPreference.getInstance().getPreferences(this,"mem_id");
-        if (memId.isEmpty()){
+        String memId = MySharedPreference.getInstance().getPreferences(this, "mem_id");
+        if (memId.isEmpty()) {
             doLogout();
         }
         noticeList.clear();
@@ -150,9 +148,8 @@ public class FirstActivity extends AppCompatActivity {
                         Log.i("공지사항", notice.getTitle());
                     }
                     adapter.notifyDataSetChanged();
-                    Log.i("리턴 값", response.message() + " / " + response.body().size());
                 } else {
-                    Toast.makeText(getApplicationContext(), "아이디나 비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "공지사항 불러오기 실패", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -199,7 +196,7 @@ public class FirstActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        switch(id) {
+        switch (id) {
             case R.id.menu_logout:
                 Toast.makeText(getApplicationContext(), "로그아웃",
                         Toast.LENGTH_SHORT).show();

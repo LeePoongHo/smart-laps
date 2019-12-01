@@ -38,9 +38,10 @@ public class RegisterActivity extends AppCompatActivity {
     private String userGender;
     private String userMajor;
     private String userEmail;
+    private String userName;
     private AlertDialog dialog;
     private boolean validate = false;
-    private EditText txtId, txtPasswd, txtEmail;
+    private EditText txtId, txtPasswd, txtEmail,txtName;
     private Button btnValidate, btnRegister;
 
     @Override
@@ -55,6 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtId = findViewById(R.id.txtId);
         txtPasswd = findViewById(R.id.txtPassword);
         txtEmail = findViewById(R.id.emailText);
+        txtName = findViewById(R.id.txtName);
 
         btnValidate = findViewById(R.id.btnValidate);
 
@@ -110,6 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void actionRegister() {
         userPassword = txtPasswd.getText().toString();
         userMajor = spinner.getSelectedItem().toString();
+        userName = txtName.getText().toString();
         userEmail = txtEmail.getText().toString();
 
         if (!validate) {
@@ -123,7 +126,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (userID.equals("") || userPassword.equals("") || userMajor.equals("") || userEmail.equals("") || userGender.equals("")) {
             AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-            dialog = builder.setMessage("빈 칸없이 입력해주세요.")
+            dialog = builder.setMessage("빈칸없이 입력해주세요.")
                     .setPositiveButton("확인", null)
                     .create();
             dialog.show();
@@ -134,8 +137,9 @@ public class RegisterActivity extends AppCompatActivity {
         registerBean.setMem_id(userID);
         registerBean.setMem_passwd(userPassword);
         registerBean.setMem_email(userEmail);
-        registerBean.setMem_name(userMajor);
+        registerBean.setMem_name(userName);
         registerBean.setMem_sex(userGender);
+        registerBean.setMem_major(userMajor);
 
         ServerService serverService = ServerServiceClass.retrofit.create(ServerService.class);
         Call<String> call = serverService.postRegister(registerBean.getMem_id(),registerBean.getMem_passwd(),registerBean.getMem_email(),

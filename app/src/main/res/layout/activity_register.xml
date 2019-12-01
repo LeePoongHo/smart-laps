@@ -89,7 +89,7 @@
                 android:padding="10dp"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
-                android:id="@+id/nameText"
+                android:id="@+id/txtName"
                 android:drawableStart="@drawable/ic_face_black_24dp"
                 android:drawableLeft="@drawable/ic_face_black_24dp"
                 android:layout_marginTop="10dp"
